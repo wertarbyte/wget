@@ -252,6 +252,7 @@ static const struct {
 #ifdef USE_WATT32
   { "wdebug",           &opt.wdebug,            cmd_boolean },
 #endif
+  { "xattrurl",         &opt.xattr_url,         cmd_boolean },
 };
 
 /* Look up CMDNAME in the commands[] and return its position in the

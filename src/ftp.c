@@ -51,6 +51,8 @@ as that of the covered work.  */
 #include "convert.h"            /* for downloaded_file */
 #include "recur.h"              /* for INFINITE_RECURSION */
 
+#include "xattr.h"
+
 #ifdef __VMS
 # include "vms.h"
 #endif /* def __VMS */
@@ -1205,6 +1207,11 @@ Error in server response, closing control connection.\n"));
     }
   else
     fp = output_stream;
+
+  if (opt.xattr_url && file_exists_p(con->target))
+    {
+      set_xattr( u, con->target );
+    }
 
   if (passed_expected_bytes)
     {

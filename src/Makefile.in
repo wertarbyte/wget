@@ -120,7 +120,7 @@ am__libunittest_a_SOURCES_DIST = cmpt.c connect.c convert.c cookies.c \
 	hash.h host.h html-parse.h html-url.h http.h http-ntlm.h \
 	init.h log.h mswindows.h netrc.h options.h progress.h ptimer.h \
 	recur.h res.h retr.h spider.h ssl.h sysdep.h url.h utils.h \
-	wget.h iri.h exits.h gettext.h test.c test.h
+	wget.h iri.h exits.h gettext.h test.c test.h xattr.c xattr.h
 @IRI_IS_ENABLED_TRUE@am__objects_1 = libunittest_a-iri.$(OBJEXT)
 am__objects_2 = libunittest_a-cmpt.$(OBJEXT) \
 	libunittest_a-connect.$(OBJEXT) \
@@ -159,7 +159,7 @@ am__wget_SOURCES_DIST = cmpt.c connect.c convert.c cookies.c ftp.c \
 	hash.h host.h html-parse.h html-url.h http.h http-ntlm.h \
 	init.h log.h mswindows.h netrc.h options.h progress.h ptimer.h \
 	recur.h res.h retr.h spider.h ssl.h sysdep.h url.h utils.h \
-	wget.h iri.h exits.h gettext.h
+	wget.h iri.h exits.h gettext.h xattr.h xattr.c
 @IRI_IS_ENABLED_TRUE@am__objects_3 = iri.$(OBJEXT)
 am_wget_OBJECTS = cmpt.$(OBJEXT) connect.$(OBJEXT) convert.$(OBJEXT) \
 	cookies.$(OBJEXT) ftp.$(OBJEXT) css.$(OBJEXT) \
@@ -170,6 +170,7 @@ am_wget_OBJECTS = cmpt.$(OBJEXT) connect.$(OBJEXT) convert.$(OBJEXT) \
 	ptimer.$(OBJEXT) recur.$(OBJEXT) res.$(OBJEXT) retr.$(OBJEXT) \
 	snprintf.$(OBJEXT) spider.$(OBJEXT) url.$(OBJEXT) \
 	utils.$(OBJEXT) exits.$(OBJEXT) build_info.$(OBJEXT) \
+	xattr.$(OBJEXT) \
 	$(am__objects_3)
 nodist_wget_OBJECTS = version.$(OBJEXT)
 wget_OBJECTS = $(am_wget_OBJECTS) $(nodist_wget_OBJECTS)
@@ -678,7 +679,7 @@ wget_SOURCES = cmpt.c connect.c convert.c cookies.c ftp.c    		  \
 	       http.h http-ntlm.h init.h log.h mswindows.h netrc.h        \
 	       options.h progress.h ptimer.h recur.h res.h retr.h         \
 	       spider.h ssl.h sysdep.h url.h utils.h wget.h iri.h 	  \
-	       exits.h gettext.h
+	       exits.h gettext.h xattr.h xattr.c
 
 nodist_wget_SOURCES = version.c
 EXTRA_wget_SOURCES = mswindows.c iri.c

@@ -127,6 +127,7 @@ struct options
   bool server_response;		/* Do we print server response? */
   bool save_headers;		/* Do we save headers together with
 				   file? */
+  bool xattr_url;
 
 #ifdef ENABLE_DEBUG
   bool debug;			/* Debugging on/off */

@@ -62,6 +62,8 @@ as that of the covered work.  */
 #include "convert.h"
 #include "spider.h"
 
+#include "xattr.h"
+
 #ifdef TESTING
 #include "test.h"
 #endif
@@ -2358,6 +2360,11 @@ File %s already there; not retrieving.\n\n"), quote (hs->local_file));
     }
   else
     fp = output_stream;
+
+  if (opt.xattr_url && file_exists_p(hs->local_file))
+    {
+      set_xattr( u, hs->local_file );
+    }
 
   /* Print fetch message, if opt.verbose.  */
   if (opt.verbose)

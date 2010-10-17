@@ -55,6 +55,7 @@ as that of the covered work.  */
 #include "convert.h"
 #include "spider.h"
 #include "http.h"               /* for save_cookies */
+#include "xattr.h"
 
 #include <getopt.h>
 #include <getpass.h>
@@ -258,6 +259,7 @@ static struct cmdline_option option_data[] =
     { "retry-connrefused", 0, OPT_BOOLEAN, "retryconnrefused", -1 },
     { "save-cookies", 0, OPT_VALUE, "savecookies", -1 },
     { "save-headers", 0, OPT_BOOLEAN, "saveheaders", -1 },
+    { "xattr-url", 0, OPT_BOOLEAN, "xattrurl", -1 },
     { IF_SSL ("secure-protocol"), 0, OPT_VALUE, "secureprotocol", -1 },
     { "server-response", 'S', OPT_BOOLEAN, "serverresponse", -1 },
     { "span-hosts", 'H', OPT_BOOLEAN, "spanhosts", -1 },
@@ -554,6 +556,8 @@ HTTP options:\n"),
        --referer=URL           include `Referer: URL' header in HTTP request.\n"),
     N_("\
        --save-headers          save the HTTP headers to file.\n"),
+    N_("\
+       --xattr-url             save the URL to extended file attributes.\n"),
     N_("\
   -U,  --user-agent=AGENT      identify as AGENT instead of Wget/VERSION.\n"),
     N_("\
